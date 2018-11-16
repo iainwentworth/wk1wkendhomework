@@ -75,8 +75,7 @@ end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
 
-  for pets in pet_shop[:pets]
-    if pets[:name] = pet
+   if pet != nil
 
       if customer[:cash] >= pet[:price]
 
@@ -90,6 +89,5 @@ def sell_pet_to_customer(pet_shop, pet, customer)
       end
     end
 
-  end
 
 end
