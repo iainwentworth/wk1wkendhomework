@@ -74,12 +74,16 @@ def customer_can_afford_pet(customer, new_pet)
 end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
-  if pet != nil
-    if customer[:cash] >= pet[:price]
-      customer[:pets].push(pet)
-      customer[:cash] -= pet[:price]
-      pet_shop[:admin][:total_cash] += pet[:price]
-      pet_shop[:admin][:pets_sold] += 1
+if pet != nil
+      if customer[:cash] >= pet[:price]
+        # customer[:pets].push(pet)       #method that doesn't use functions
+        add_pet_to_customer(customer, pet)
+        # customer[:cash] -= pet[:price]     #method that doesn't use functions
+        remove_customer_cash(customer, pet[:price])
+        # pet_shop[:admin][:total_cash] += pet[:price]  #method that doesn't use functions
+        add_or_remove_cash(pet_shop, pet[:price])
+        # pet_shop[:admin][:pets_sold] += 1    #method that doesn't use functions
+        increase_pets_sold(pet_shop, 1)
+      end
     end
-  end
 end
