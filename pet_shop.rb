@@ -52,3 +52,7 @@ end
 def add_pet_to_stock(pet_shop, the_new_pet)
   pet_shop[:pets].push(the_new_pet)
 end
+
+def customer_cash(customer)
+  customer[:cash]
+end
